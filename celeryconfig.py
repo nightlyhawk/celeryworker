@@ -1,4 +1,8 @@
 import os
 
-broker_url = os.getenv("BROKER_URL", "redis://redis:6379/0")
-result_backend = os.getenv("RESULT_BACKEND", "redis://redis:6379/0")
+host = os.environ('UPSTASH_REDIS_HOST')
+password = os.environ('UPSTASH_REDIS_PASSWORD')
+port = os.environ('UPSTASH_REDIS_PORT')
+
+broker_url = "redis://:{}@{}:{}".format(password, host, port)
+result_backend = "redis://:{}@{}:{}".format(password, host, port)

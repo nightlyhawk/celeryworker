@@ -1,0 +1,2 @@
+# celeryworker
+standaloneworker

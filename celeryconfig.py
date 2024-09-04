@@ -1,8 +1,4 @@
 import os
 
-# host = os.environ('UPSTASH_REDIS_HOST')
-# password = os.environ('UPSTASH_REDIS_PASSWORD')
-# port = os.environ('UPSTASH_REDIS_PORT')
-
-broker_url =os.getenv('BROKER_URL')
-result_backend = os.getenv('RESULT_BACKEND')
+CELERY_BROKER_URL = os.getenv("BROKER_URL", "redis://redis:6379/0")
+CELERY_RESULT_BACKEND = os.getenv("RESULT_BACKEND", "redis://redis:6379/0")
